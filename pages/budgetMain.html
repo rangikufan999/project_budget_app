@@ -1,0 +1,49 @@
+<h1 class="text-center"> Monthly Budget </h1><br/>
+            <hr/>
+            <p class="text-center"> Add a bill to calculate your total monthly bills!</p><br/>
+            <p class="text-center"> Your monthly income is: {{incomeDisplay}}</p><br/>
+    		<div ng-controller="budgetController" class="justify-content-center">
+                <div class="text-center">
+                    <label>Name of Bill</label><br/>
+                    <input class="text-center" type="text" ng-model="bill" /><br/>
+                    <label>Amount of Bill</label><br/>
+                    <input class="text-center" type="number" step="0.01" min="0" ng-model="amount" /><br/>
+                    <label>Description</label><br/>
+                    <textarea class="text-center" ng-model="desc" ></textarea><br/><br/>
+                    <button type="button" class="btn btn-primary text-center" ng-click="addBill()">Add</button><br/>
+                    <p class="text-danger">{{ errortext }}</p>
+                </div>
+
+                <p class="text-center">{{"Bill total is: " + total}}</p><br/>
+                <p id="budget" class="text-center alert alert-success">{{comparison}}</p>
+
+                <div class="justify-content-center" id="billList">
+                    <div class="row text-center">
+                        <div class="col-sm">
+                            <p>Bill</p>
+                        </div>
+                        <div class="col-sm">
+                            <p>Amount</p>
+                        </div>
+                        <div class="col-sm">
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <ul class="list-group list-flush">
+                       <li class="list-group-item" ng-repeat="x in billList" ng-click="removeBill($index)">
+                            <div class="row text-center">
+                                <div class="col-sm">
+                                    <p>{{x.bill}}</p>
+                                </div>
+                                <div class="col-sm">
+                                    <p>{{x.amount}}</p>
+                                </div>
+                                <div class="col-sm">
+                                    <p>{{x.desc}}</p>
+                                </div>
+                            </div>
+                       </li> 
+                    </ul>
+                </div> 
+    		</div>
+            <br/>

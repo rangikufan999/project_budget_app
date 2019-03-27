@@ -1,0 +1,9 @@
+<div class="container text-center">	
+	<h1 class="text-center">Welcome to the budget application!</h1>
+	<hr/>
+	<label class="text-center">Enter in your monthly income!</label><br/>
+	<input type="number" step="0.01" min="0" ng-model="income" />
+	<button class="btn btn-primary" ng-click="submitIncome()">Continue</button>
+	<br/><br/>
+	<p class="text-danger">{{errortext}}</p>
+</div>
