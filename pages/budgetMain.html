@@ -30,8 +30,9 @@
                         </div>
                     </div>
                     <ul class="list-group list-flush">
-                       <li class="list-group-item" ng-repeat="x in billList" ng-click="removeBill($index)">
+                       <li class="list-group-item" ng-repeat="x in billList">
                             <div class="row text-center">
+                                <button class="btn btn-danger" ng-click="removeBill($index)">X</button>
                                 <div class="col-sm">
                                     <p>{{x.bill}}</p>
                                 </div>
